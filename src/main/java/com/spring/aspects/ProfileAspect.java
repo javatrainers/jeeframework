@@ -2,6 +2,7 @@ package com.spring.aspects;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -16,8 +17,8 @@ import com.hibernate.springdata.UsersEntity;
 @Component
 public class ProfileAspect  {
 	
-	@Around("execution(* com.spring.beans.ProfileBean.register(java.lang.String,java.lang.String))")
-	public UsersEntity getResponseTime(ProceedingJoinPoint  joinPoint) throws Exception{
+	@After("within(com.spring.beans.ProfileBean)")
+	public void getResponseTime() throws Exception{
 		// ******************** SECURITY *************************
 		String remoteAddress = ((ServletRequestAttributes)RequestContextHolder.currentRequestAttributes())
 			       .getRequest().getRemoteAddr();
@@ -30,21 +31,6 @@ public class ProfileAspect  {
 		System.out.println("\n\n >>>>>>>>>>> SPRING ENTER >>>>>>>>>>>");
 		System.out.println(" Entering Aspect - response time performance");
 		
-		// ******************** PERFORMANCE MONITOR *************************		
-		long startTime=System.currentTimeMillis();
-		UsersEntity result=null;
-		
-		// ******************** EXCEPTION HANDLING *************************		
-		try {
-			result=(UsersEntity)joinPoint.proceed();// give control to bean class
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
-		long stopTime=System.currentTimeMillis();
-		System.out.println("Time taken to process this request :"+(stopTime-startTime)+"ms");
-		System.out.println("Exit Aspect -     response time performance");
-		System.out.println(">>>>>>>>>>> SPRING EXIT >>>>>>>>>>>");
-		return result;
 	}
 	/*
 	@Before("pointcut1()")
