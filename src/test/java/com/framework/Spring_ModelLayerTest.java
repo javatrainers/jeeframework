@@ -15,8 +15,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.annotation.Order;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.hibernate.springdata.UsersEntity;
 import com.spring.beans.ProfileBean;
+import com.springdata.UsersEntity;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -45,6 +45,7 @@ public class Spring_ModelLayerTest {
 		profile.update("tester", "t12345");
 		boolean res=profile.verifyCredentials("tester", "t12345");
 		assertTrue(res);
+		// assertEquals(res, true);
 	}
 	@Test
 	public void test4delete() throws Exception {

@@ -1,4 +1,4 @@
-package com.hibernate.springdata;
+package com.springdata;
 
 import java.util.List;
 
@@ -30,7 +30,7 @@ public interface UserRepository extends JpaRepository<UsersEntity, String> {
 	@Query("DELETE UsersEntity u WHERE u.uid= ?1")
 	public int delete(String users);
 	//SQL
-	@Query(value="SELECT * FROM users WHERE user= ?1 and password=?2",nativeQuery = true)
+	@Query(value="SELECT * FROM users WHERE userid= ?1 and password=?2",nativeQuery = true)
 	public List<UsersEntity> nativeVerify(String users,String password);
 
 		

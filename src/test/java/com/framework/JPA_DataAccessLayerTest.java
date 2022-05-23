@@ -24,8 +24,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.PlatformTransactionManager;
-import com.hibernate.springdata.UserRepository;
-import com.hibernate.springdata.UsersEntity;
+
+import com.springdata.UserRepository;
+import com.springdata.UsersEntity;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -38,6 +39,7 @@ public class JPA_DataAccessLayerTest {
 		ur.save(user);
 		// created 1 record in table.. with userrid/pwd tester/t123
 		List<UsersEntity>  users= ur.verify("tester","t123");
+		
 		// select * from user where userid='tester' and password='t123'
 		// 1 record in table = List should have 1 entity object
 		assertEquals(1, users.size());

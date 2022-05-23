@@ -11,9 +11,9 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
 
-import com.hibernate.springdata.UsersEntity;
 import com.opensymphony.xwork2.ActionSupport;
 import com.spring.beans.ProfileBean;
+import com.springdata.UsersEntity;
 public class TestStrutAction {
 	private static final long serialVersionUID = 1L;
 

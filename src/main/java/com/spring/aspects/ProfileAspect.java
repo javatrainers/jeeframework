@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import com.hibernate.springdata.UsersEntity;
+import com.springdata.UsersEntity;
 
 @Aspect
 @Component

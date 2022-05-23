@@ -10,8 +10,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @ComponentScan({ "com.config", "com.spring"  })
-@EnableJpaRepositories("com.hibernate")
-@EntityScan({"com.hibernate"})
+@EnableJpaRepositories("com.springdata")
+@EntityScan({"com.springdata"})
 @EnableTransactionManagement
 public class ShoppingFrameworkApplication {
 

@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.hibernate.springdata.UserRepository;
-import com.hibernate.springdata.UsersEntity;
+import com.springdata.UserRepository;
+import com.springdata.UsersEntity;
 
 @Service
 @Scope("session")
@@ -53,10 +53,9 @@ public class ProfileBean {
 			return true;
 	}
 	public boolean delete(String userid) {
-		int i=ur.delete(userid);
-		if(i==0)
-			return false;
-		else
-			return true;
+		UsersEntity ue=new UsersEntity();
+		ue.setUid(userid);
+		ur.delete(ue);
+		return true;
 	}
 }

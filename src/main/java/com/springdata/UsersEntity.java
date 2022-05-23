@@ -1,4 +1,4 @@
-package com.hibernate.springdata;
+package com.springdata;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -8,10 +8,11 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.client.RestTemplate;
-import com.hibernate.springdata.UsersEntity;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.spring.beans.ProfileBean;
 import com.spring.beans.qualifier.ICar;
+import com.springdata.UsersEntity;
 
 public class ProfileAction extends ActionSupport implements ServletRequestAware {
 	private static final long serialVersionUID = 1L;
