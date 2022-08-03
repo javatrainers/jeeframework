@@ -86,6 +86,7 @@ public class ProfileAction extends ActionSupport implements ServletRequestAware 
 	}
 
 	public String register() throws Exception {
+		System.out.println("inside strut controller register method");
 		pb.register(userid, pwd);
 		inputStream = new StringBufferInputStream("success");
 		return SUCCESS;

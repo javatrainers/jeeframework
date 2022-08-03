@@ -4,13 +4,24 @@
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.objectFactory" value="spring" />
 	<package name="default" extends="json-default">
-	<interceptors>
+		<interceptors>
 			<interceptor name="log"
 				class="com.strut.ProfileInterceptor" />
 		</interceptors>
 	
 	
 	
+		<action name="loginstruttest" 
+		class="com.strut.TestLoginStrut"
+			method="authenticate">
+			<result name="correct">welcome.jsp</result>
+			<result name="wrong" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result> 
+		</action>
+		
+<!--  CONTROLLER  -->	
 	
 	
 		<action name="strutlogin" 

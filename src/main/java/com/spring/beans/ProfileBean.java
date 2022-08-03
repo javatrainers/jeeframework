@@ -40,6 +40,7 @@ public class ProfileBean {
 			return true;
 	}
 	public void register(String userid, String pwd) {
+		System.out.println("inside spring service register method");
 		UsersEntity ue=new UsersEntity();
 		ue.setUid(userid);
 		ue.setPwd(pwd);
